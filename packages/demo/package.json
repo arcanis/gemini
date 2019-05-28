@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
+    "@gemini/core": "workspace:packages/gemini-core",
+    "@gemini/faker": "workspace:packages/gemini-faker",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "react-spring": "^8.0.20"
+  },
+  "devDependencies": {
+    "@berry/pnpify": "^0.0.4",
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
+    "css-loader": "^2.1.1",
+    "fork-ts-checker-webpack-plugin": "^1.3.4",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "pnp-webpack-plugin": "portal:/home/arcanis/pwp-johnny",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.1",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}

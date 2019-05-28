@@ -1,0 +1,8 @@
+.gem-view {
+  transform: translateX(calc(var(--gem-active) * -100%));
+  transition: transform calc(var(--gem-timeout) * 1ms);
+}
+
+.gem-view-panel {
+  transform: translateX(calc(var(--gem-view) * 100%));
+}

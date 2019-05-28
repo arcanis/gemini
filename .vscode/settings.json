@@ -1,0 +1,4 @@
+{
+  "typescript.tsdk": "tssdk/lib",
+  "editor.tabSize": 2
+}
