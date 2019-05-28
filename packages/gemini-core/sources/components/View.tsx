@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from 'react';
 
 export type Props = {
   children: React.ReactNode;
@@ -42,7 +42,7 @@ export const View = ({children, index = 0}: Props) => {
   // the browser will correctly trigger the animation for any view that just
   // appeared (instead of skipping their transition and putting them directly
   // at their final location)
-  useEffect(() => {
+  useLayoutEffect(() => {
     setActiveView(activeViews.get(index)!.cssIndex);
   });
 

@@ -6,8 +6,8 @@ const posix = require(`path`);
 const webpack = require(`webpack`);
 
 module.exports = (env, argv) => {
-  const PUBLIC_PATH = argv.mode === `production`
-    ? `/gemini`
+  const PUBLIC_PATH = true || argv.mode === `production`
+    ? `/gemini/`
     : `/`;
 
   return {
@@ -54,13 +54,22 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      new webpack.DefinePlugin({PUBLIC_PATH}),
+      new webpack.DefinePlugin({PUBLIC_PATH: JSON.stringify(PUBLIC_PATH)}),
       new ForkTsCheckerWebpackPlugin(PnpWebpackPlugin.forkTsCheckerOptions()),
       new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        filename: `404.html`,
+        template: `./sources/404.html`,
+        publicPath: PUBLIC_PATH,
+      }),
     ],
 
     devServer: {
-      historyApiFallback: true,
+      historyApiFallback: {
+        rewrites: [
+          {from: /^\//, to: `${PUBLIC_PATH}index.html`},
+        ],
+      },
     },
   };
 };

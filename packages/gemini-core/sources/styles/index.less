@@ -12,15 +12,6 @@ html, body, body > div, .gem-page {
   height: 100%;
 }
 
-.gem-page {
-  overflow: hidden;
-}
-
-.gem-page {
-  display: flex;
-  flex-direction: column;
-}
-
 .gem-color-sets(@component, @ruleset) {
   .gem-color-ref(@name, @color) {
     @{component}-@{name} {
@@ -36,6 +27,7 @@ html, body, body > div, .gem-page {
 
 @import "./_headers";
 @import "./_tabs";
+@import "./_pages.less";
 @import "./_views";
 
 @import "./themes/android/android";

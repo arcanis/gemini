@@ -306,6 +306,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-helmet@npm:^5.0.8":
+  version: 5.0.8
+  resolution: "@types/react-helmet@npm:5.0.8"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: d768a19e1e000a3916456a8a6711ca45ea24c6aa140ae8a1a5f585c9285c2a11b0d5ea1c3ccd3bc89c21804295b104236d197776a345a3aa4dbf21c9e2ba8ff8
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:^16.8.18":
   version: 16.8.18
   resolution: "@types/react@npm:16.8.18"
@@ -1862,6 +1871,7 @@ __metadata:
     "@gemini/faker": "workspace:packages/gemini-faker"
     "@types/react": "npm:^16.8.18"
     "@types/react-dom": "npm:^16.8.4"
+    "@types/react-helmet": "npm:^5.0.8"
     css-loader: "npm:^2.1.1"
     fork-ts-checker-webpack-plugin: "npm:^1.3.4"
     html-webpack-plugin: "npm:^3.2.0"
@@ -1870,6 +1880,7 @@ __metadata:
     pnp-webpack-plugin: "portal:/home/arcanis/pwp-johnny?locator=demo%40workspace%3Apackages%2Fdemo"
     react: "npm:^16.8.6"
     react-dom: "npm:^16.8.6"
+    react-helmet: "npm:^5.2.1"
     react-icons: "npm:^3.7.0"
     react-spring: "npm:^8.0.20"
     style-loader: "npm:^0.23.1"
@@ -2270,6 +2281,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exenv@npm:^1.2.1":
+  version: 1.2.2
+  resolution: "exenv@npm:1.2.2"
+  checksum: 594e2c7fcdbfb7435369cc1b0396e1d2c5185801bc7261e98290dd88c367402870a9185ad7e7e7ea005e3cc201f494dbd7c79ddbf3e14e8ca44abf5221578690
+  languageName: node
+  linkType: hard
+
 "expand-brackets@npm:^2.1.4":
   version: 2.1.4
   resolution: "expand-brackets@npm:2.1.4"
@@ -2666,7 +2684,11 @@ __metadata:
     "@types/prop-types": "npm:^15.7.1"
     "@types/react": "npm:^16.8.18"
     "@types/react-dom": "npm:^16.8.4"
+    "@types/react-helmet": "npm:^5.0.8"
     typescript: "npm:^3.4.5"
+  dependenciesMeta:
+    webpack-cli:
+      build: false
   languageName: unknown
   linkType: soft
 
@@ -4903,7 +4925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.8, prop-types@npm:^15.6.2":
+"prop-types@npm:^15.5.4, prop-types@npm:^15.5.8, prop-types@npm:^15.6.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
   dependencies:
@@ -5105,6 +5127,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-fast-compare@npm:^2.0.2":
+  version: 2.0.4
+  resolution: "react-fast-compare@npm:2.0.4"
+  checksum: aaf45e431eccbcf1a68b137cbfc9684b48ec4292b03c5b53071ee48a4df72b2ee05c666991b673e5cf871fa31b7bfbcfec4928814ecab510f2f6487a9cfba9c0
+  languageName: node
+  linkType: hard
+
+"react-helmet@npm:^5.2.1":
+  version: 5.2.1
+  resolution: "react-helmet@npm:5.2.1"
+  dependencies:
+    object-assign: "npm:^4.1.1"
+    prop-types: "npm:^15.5.4"
+    react-fast-compare: "npm:^2.0.2"
+    react-side-effect: "npm:^1.1.0"
+  peerDependencies:
+    react: ">=15.0.0"
+  checksum: 1e363c929a99fe2f88623ea299a6d002c960154a8ede8049f93f0e464d8aec69d02a1a0ebdef4207dd3f6af0ae058a3d4710cf60e167b9bc538b760cc421ebf4
+  languageName: node
+  linkType: hard
+
 "react-icons@npm:^3.7.0":
   version: 3.7.0
   resolution: "react-icons@npm:3.7.0"
@@ -5120,6 +5163,18 @@ __metadata:
   version: 16.8.6
   resolution: "react-is@npm:16.8.6"
   checksum: c9e05a72050092cfd7d53888e306e11f4c70e972322ee60719bd8abd0f2b50929c11b416cb4ed05a367ec4858f2e68a43aa6f52b3be9fc694eec7237f89668da
+  languageName: node
+  linkType: hard
+
+"react-side-effect@npm:^1.1.0":
+  version: 1.1.5
+  resolution: "react-side-effect@npm:1.1.5"
+  dependencies:
+    exenv: "npm:^1.2.1"
+    shallowequal: "npm:^1.0.1"
+  peerDependencies:
+    react: ^0.13.0 || ^0.14.0 || ^15.0.0 || ^16.0.0
+  checksum: 93e7e2deebc3f79f4e71a91996736a1e3e73dde53ac00c884e84993fea22fe6dc4f204565acf66899e9e7798579a0e103a5265699d1699fa98981458e2917b5e
   languageName: node
   linkType: hard
 
@@ -5581,6 +5636,13 @@ __metadata:
   bin:
     sha.js: ./bin.js
   checksum: ad862a5f667924b4e3bec85c61c242bbd342abc2d80d49a941123130cfc10f5e83a9fd1106dc7342bb39f60ae4ab3f866366e89dab8ca8d6ddc4023b57c5ab20
+  languageName: node
+  linkType: hard
+
+"shallowequal@npm:^1.0.1":
+  version: 1.1.0
+  resolution: "shallowequal@npm:1.1.0"
+  checksum: 49a676fb5f787dfc378aa9f6ede7d0d7d041cbe09d6839706db2429137cf4a63f7a5559380ec39c951a29e06bb94d2a663dc19aa4bfb5b08307a0ce132ae4951
   languageName: node
   linkType: hard
 

@@ -137,6 +137,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "npm:16.8.4"
                 ],
                 [
+                  "@types/react-helmet",
+                  "npm:5.0.8"
+                ],
+                [
                   "typescript",
                   "npm:3.4.5"
                 ]
@@ -1141,6 +1145,27 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react-dom",
                   "npm:16.8.4"
+                ],
+                [
+                  "@types/react",
+                  "npm:16.8.18"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "@types/react-helmet",
+        [
+          [
+            "npm:5.0.8",
+            {
+              "packageLocation": "./.yarn/cache/@types-react-helmet-npm-5.0.8-0d241c0e17db478572fec3f34099a1d3141bfb0070d9a6236b2389613f99b1a6.zip/node_modules/@types/react-helmet/",
+              "packageDependencies": [
+                [
+                  "@types/react-helmet",
+                  "npm:5.0.8"
                 ],
                 [
                   "@types/react",
@@ -5203,6 +5228,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "npm:16.8.4"
                 ],
                 [
+                  "@types/react-helmet",
+                  "npm:5.0.8"
+                ],
+                [
                   "css-loader",
                   "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:2.1.1"
                 ],
@@ -5233,6 +5262,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "react-dom",
                   "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:16.8.6"
+                ],
+                [
+                  "react-helmet",
+                  "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:5.2.1"
                 ],
                 [
                   "react-icons",
@@ -6223,6 +6256,23 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "strip-eof",
                   "npm:1.0.0"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "exenv",
+        [
+          [
+            "npm:1.2.2",
+            {
+              "packageLocation": "./.yarn/cache/exenv-npm-1.2.2-55e1bc7683ce90a6b01f8e80a350a4804c40da847f7d288a63e8d47f9f5879c6.zip/node_modules/exenv/",
+              "packageDependencies": [
+                [
+                  "exenv",
+                  "npm:1.2.2"
                 ]
               ]
             }
@@ -7330,6 +7380,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react-dom",
                   "npm:16.8.4"
+                ],
+                [
+                  "@types/react-helmet",
+                  "npm:5.0.8"
                 ],
                 [
                   "typescript",
@@ -13390,6 +13444,88 @@ function $$SETUP_STATE(hydrateRuntimeState) {
         ]
       ],
       [
+        "react-fast-compare",
+        [
+          [
+            "npm:2.0.4",
+            {
+              "packageLocation": "./.yarn/cache/react-fast-compare-npm-2.0.4-0af00899cec50d1dbd5869cacd13483807f581768a5b3aed7b048b3a30021fc1.zip/node_modules/react-fast-compare/",
+              "packageDependencies": [
+                [
+                  "react-fast-compare",
+                  "npm:2.0.4"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "react-helmet",
+        [
+          [
+            "npm:5.2.1",
+            {
+              "packageLocation": "./.yarn/cache/react-helmet-npm-5.2.1-f381bbde43aceb27c49e596b52f338b0ff8ee2f70f30a540624ddb687098c4f3.zip/node_modules/react-helmet/",
+              "packageDependencies": [
+                [
+                  "react-helmet",
+                  "npm:5.2.1"
+                ],
+                [
+                  "object-assign",
+                  "npm:4.1.1"
+                ],
+                [
+                  "prop-types",
+                  "npm:15.7.2"
+                ],
+                [
+                  "react-fast-compare",
+                  "npm:2.0.4"
+                ],
+                [
+                  "react-side-effect",
+                  "npm:1.1.5"
+                ]
+              ]
+            }
+          ],
+          [
+            "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:5.2.1",
+            {
+              "packageLocation": "./.yarn/virtual/react-helmet-virtual-54fe7172c76e0838018c603a5d734fdfc3ae1688559e31b8448ebab24f92e0f5/node_modules/react-helmet/",
+              "packageDependencies": [
+                [
+                  "react-helmet",
+                  "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:5.2.1"
+                ],
+                [
+                  "object-assign",
+                  "npm:4.1.1"
+                ],
+                [
+                  "prop-types",
+                  "npm:15.7.2"
+                ],
+                [
+                  "react",
+                  "npm:16.8.6"
+                ],
+                [
+                  "react-fast-compare",
+                  "npm:2.0.4"
+                ],
+                [
+                  "react-side-effect",
+                  "virtual:54fe7172c76e0838018c603a5d734fdfc3ae1688559e31b8448ebab24f92e0f5a9a1c48eb2949e06c4da17f0da895f78c7d4727edab45a05d6c5622fe9b7d44d#npm:1.1.5"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
         "react-icons",
         [
           [
@@ -13441,6 +13577,55 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "react-is",
                   "npm:16.8.6"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "react-side-effect",
+        [
+          [
+            "npm:1.1.5",
+            {
+              "packageLocation": "./.yarn/cache/react-side-effect-npm-1.1.5-2c574e5195cbaf0dd9d260d704172ec08524a6e7ee31541e3f4826bfd2ec219a.zip/node_modules/react-side-effect/",
+              "packageDependencies": [
+                [
+                  "react-side-effect",
+                  "npm:1.1.5"
+                ],
+                [
+                  "exenv",
+                  "npm:1.2.2"
+                ],
+                [
+                  "shallowequal",
+                  "npm:1.1.0"
+                ]
+              ]
+            }
+          ],
+          [
+            "virtual:54fe7172c76e0838018c603a5d734fdfc3ae1688559e31b8448ebab24f92e0f5a9a1c48eb2949e06c4da17f0da895f78c7d4727edab45a05d6c5622fe9b7d44d#npm:1.1.5",
+            {
+              "packageLocation": "./.yarn/virtual/react-side-effect-virtual-ba55dd56e11609f37808c81afb1ad28ce0371dce2b24801d0a6c3756365f5dde/node_modules/react-side-effect/",
+              "packageDependencies": [
+                [
+                  "react-side-effect",
+                  "virtual:54fe7172c76e0838018c603a5d734fdfc3ae1688559e31b8448ebab24f92e0f5a9a1c48eb2949e06c4da17f0da895f78c7d4727edab45a05d6c5622fe9b7d44d#npm:1.1.5"
+                ],
+                [
+                  "exenv",
+                  "npm:1.2.2"
+                ],
+                [
+                  "react",
+                  "npm:16.8.6"
+                ],
+                [
+                  "shallowequal",
+                  "npm:1.1.0"
                 ]
               ]
             }
@@ -14590,6 +14775,23 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "safe-buffer",
                   "npm:5.1.2"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "shallowequal",
+        [
+          [
+            "npm:1.1.0",
+            {
+              "packageLocation": "./.yarn/cache/shallowequal-npm-1.1.0-f0cbc9d221f6b4d85f16a868b392dc4e3fae0dbfeeb5a22f7deccef0a225af88.zip/node_modules/shallowequal/",
+              "packageDependencies": [
+                [
+                  "shallowequal",
+                  "npm:1.1.0"
                 ]
               ]
             }

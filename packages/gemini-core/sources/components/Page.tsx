@@ -4,20 +4,24 @@ import {BreadcrumbContext}                       from '../context';
 import {NavigateContext}                         from '../context';
 
 export type Props = {
+  baseUrl?: string;
   children: React.ReactNode;
   theme: string;
 };
 
-export const Page = ({children, theme}: Props) => {
+export const Page = ({baseUrl = `/`, children, theme}: Props) => {
+  if (!baseUrl.endsWith(`/`))
+    baseUrl = `${baseUrl}/`;
+
   const makeBreadcrumb = (segments: Array<string>) => {
     return {available: segments, consumed: []};
   };
 
   const extractBreadcrumb = (pathname: string) => {
-    if (pathname === `/`) {
+    if (pathname === baseUrl) {
       return makeBreadcrumb([]);
     } else {
-      return makeBreadcrumb(pathname.slice(1).split(/\//g));
+      return makeBreadcrumb(pathname.slice(baseUrl.length).split(/\//g));
     }
   };
 
@@ -26,7 +30,7 @@ export const Page = ({children, theme}: Props) => {
   });
 
   const navigate = useCallback((segments: Array<string>) => {
-    window.history.pushState(null, ``, `/${segments.join(`/`)}`);
+    window.history.pushState(null, ``, `${baseUrl}${segments.join(`/`)}`);
     setBreadcrumb(makeBreadcrumb(segments.slice()));
   }, []);
 
