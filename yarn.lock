@@ -231,6 +231,7 @@ __metadata:
     "@berry/pnpify": "npm:^0.0.2"
     "@emotion/styled": "npm:^10.0.11"
     "@types/react": "npm:^16.8.18"
+    react-swipeable: "npm:^5.2.3"
     typescript: "npm:^3.4.5"
   peerDependencies:
     "@emotion/core": "*"
@@ -312,6 +313,15 @@ __metadata:
   dependencies:
     "@types/react": "npm:*"
   checksum: d768a19e1e000a3916456a8a6711ca45ea24c6aa140ae8a1a5f585c9285c2a11b0d5ea1c3ccd3bc89c21804295b104236d197776a345a3aa4dbf21c9e2ba8ff8
+  languageName: node
+  linkType: hard
+
+"@types/react-swipeable@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "@types/react-swipeable@npm:4.3.0"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: de3c1e58679e755a8215eefa48b58d3484ef5c59c661ad7e758966ef429bdbe2e09b823632418f906e2067c35728c511a33152a2c4d3b943110b68c635e22a64
   languageName: node
   linkType: hard
 
@@ -2685,6 +2695,7 @@ __metadata:
     "@types/react": "npm:^16.8.18"
     "@types/react-dom": "npm:^16.8.4"
     "@types/react-helmet": "npm:^5.0.8"
+    "@types/react-swipeable": "npm:^4.3.0"
     typescript: "npm:^3.4.5"
   dependenciesMeta:
     webpack-cli:
@@ -5188,6 +5199,17 @@ __metadata:
     react: ">= 16.8.0"
     react-dom: ">= 16.8.0"
   checksum: 3521e4ea1e18a53a20e040e5e227a3c4807820750adce0f8c8a36f2f5f30cd3de62b9fa531aa546c7b1b57c23040120a1a9b05f89c8348bbfe7fd6ce108cc62e
+  languageName: node
+  linkType: hard
+
+"react-swipeable@npm:^5.2.3":
+  version: 5.2.3
+  resolution: "react-swipeable@npm:5.2.3"
+  dependencies:
+    prop-types: "npm:^15.6.2"
+  peerDependencies:
+    react: ^16.0.0-0
+  checksum: 541a203ffaaaa5dca8ebb7e16a18e0f999afedcbe6a9791c0870d08ca165ab656f59441e54cd3928759ef35f32341811efc5e5197a7ce4cbf418509d769dfa66
   languageName: node
   linkType: hard
 

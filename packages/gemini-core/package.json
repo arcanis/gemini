@@ -14,6 +14,7 @@
     "react-spring": "*"
   },
   "dependencies": {
-    "@emotion/styled": "^10.0.11"
+    "@emotion/styled": "^10.0.11",
+    "react-swipeable": "^5.2.3"
   }
 }

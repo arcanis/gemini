@@ -1,4 +1,6 @@
 import styled                                          from '@emotion/styled';
+// @ts-ignore
+import {useSwipeable}                                  from 'react-swipeable';
 import React, {useRef}                                 from 'react';
 
 import {Tab}                                           from './Tab';
@@ -73,10 +75,32 @@ export const Tabs = ({children, colorSet, landingTab, position}: Props) => {
     </div>
   </React.Fragment>;
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      if (activeIndex + 1 < allChildren.length) {
+        navigate(allChildren[activeIndex + 1].props.name);
+      }
+    },
+    onSwipedRight: () => {
+      if (activeIndex > 0) {
+        navigate(allChildren[activeIndex - 1].props.name);
+      }
+    },
+    onSwiping: ({event, dir}: any) => {
+      if (dir === `Left` && activeIndex + 1 >= allChildren.length)
+        return;
+      if (dir === `Right` && activeIndex === 0)
+        return;
+      event.stopPropagation();
+    },
+  });
+
   const view = <React.Fragment key={`view`}>
-    <View className={`gem-view`} index={activeIndex}>
-      {applyRouter(segment, React.createElement(allChildren[activeIndex].props.component))}
-    </View>
+    <div className={`gem-tabs-view`} {...handlers}>
+      <View className={`gem-view`} index={activeIndex}>
+        {applyRouter(segment, React.createElement(allChildren[activeIndex].props.component))}
+      </View>
+    </div>
   </React.Fragment>;
 
   const content = getPosition(position) === `top`

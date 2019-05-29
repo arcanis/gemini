@@ -141,6 +141,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "npm:5.0.8"
                 ],
                 [
+                  "@types/react-swipeable",
+                  "npm:4.3.0"
+                ],
+                [
                   "typescript",
                   "npm:3.4.5"
                 ]
@@ -910,6 +914,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:8.0.20"
                 ],
                 [
+                  "react-swipeable",
+                  "virtual:bb5d52829864395b7a011c4c4dc5067dce136a8297c0841690756e267986da1913d96377c0a2f4b95bfb70959c190383029d308975d7009aacb1da2abe63dcec#npm:5.2.3"
+                ],
+                [
                   "typescript",
                   "npm:3.4.5"
                 ]
@@ -936,6 +944,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react",
                   "npm:16.8.18"
+                ],
+                [
+                  "react-swipeable",
+                  "virtual:1603ac3b3bd2ebbca46ce955b9661478f01a6d045b37c0b49cebf9868ef25f2df273a11c4dfcc7f44b4d8eaab7a5e2f6be8d266e808ec7f64e9a96e8768fac84#npm:5.2.3"
                 ],
                 [
                   "typescript",
@@ -1166,6 +1178,27 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react-helmet",
                   "npm:5.0.8"
+                ],
+                [
+                  "@types/react",
+                  "npm:16.8.18"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "@types/react-swipeable",
+        [
+          [
+            "npm:4.3.0",
+            {
+              "packageLocation": "./.yarn/cache/@types-react-swipeable-npm-4.3.0-02d6e1fcc7f7079af0a1448d14802793937535bd307b9d83289232cfe76a6087.zip/node_modules/@types/react-swipeable/",
+              "packageDependencies": [
+                [
+                  "@types/react-swipeable",
+                  "npm:4.3.0"
                 ],
                 [
                   "@types/react",
@@ -7384,6 +7417,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react-helmet",
                   "npm:5.0.8"
+                ],
+                [
+                  "@types/react-swipeable",
+                  "npm:4.3.0"
                 ],
                 [
                   "typescript",
@@ -13679,6 +13716,63 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "react-dom",
                   "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:16.8.6"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "react-swipeable",
+        [
+          [
+            "npm:5.2.3",
+            {
+              "packageLocation": "./.yarn/cache/react-swipeable-npm-5.2.3-830a506f4be41416ace08e126679708e05e012c8691389644da32f00b4e5518f.zip/node_modules/react-swipeable/",
+              "packageDependencies": [
+                [
+                  "react-swipeable",
+                  "npm:5.2.3"
+                ],
+                [
+                  "prop-types",
+                  "npm:15.7.2"
+                ]
+              ]
+            }
+          ],
+          [
+            "virtual:1603ac3b3bd2ebbca46ce955b9661478f01a6d045b37c0b49cebf9868ef25f2df273a11c4dfcc7f44b4d8eaab7a5e2f6be8d266e808ec7f64e9a96e8768fac84#npm:5.2.3",
+            {
+              "packageLocation": "./.yarn/virtual/react-swipeable-virtual-c9a6c0daec1f4f55dad3591d571d6e4a8dfff5a2a88bf07b78952cd7daaf0043/node_modules/react-swipeable/",
+              "packageDependencies": [
+                [
+                  "react-swipeable",
+                  "virtual:1603ac3b3bd2ebbca46ce955b9661478f01a6d045b37c0b49cebf9868ef25f2df273a11c4dfcc7f44b4d8eaab7a5e2f6be8d266e808ec7f64e9a96e8768fac84#npm:5.2.3"
+                ],
+                [
+                  "prop-types",
+                  "npm:15.7.2"
+                ]
+              ]
+            }
+          ],
+          [
+            "virtual:bb5d52829864395b7a011c4c4dc5067dce136a8297c0841690756e267986da1913d96377c0a2f4b95bfb70959c190383029d308975d7009aacb1da2abe63dcec#npm:5.2.3",
+            {
+              "packageLocation": "./.yarn/virtual/react-swipeable-virtual-d6076c14c71d6f9ba96c842fd8d32b0833be9facb4da65a26bce38a24aa0a814/node_modules/react-swipeable/",
+              "packageDependencies": [
+                [
+                  "react-swipeable",
+                  "virtual:bb5d52829864395b7a011c4c4dc5067dce136a8297c0841690756e267986da1913d96377c0a2f4b95bfb70959c190383029d308975d7009aacb1da2abe63dcec#npm:5.2.3"
+                ],
+                [
+                  "prop-types",
+                  "npm:15.7.2"
+                ],
+                [
+                  "react",
+                  "npm:16.8.6"
                 ]
               ]
             }
