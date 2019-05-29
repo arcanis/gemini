@@ -65,6 +65,8 @@ const Application = () => {
   return <>
     <Helmet>
       <meta name={`viewport`} content={`width=device-width, user-scalable=no`} />
+      <meta name={`mobile-web-app-capable`} content={`yes`} />
+      <meta name={`apple-mobile-web-app-capable`} content={`yes`} />
     </Helmet>
     <gem.Page theme={`android`} baseUrl={PUBLIC_PATH}>
       <gem.Header colorSet={`primary`} title={`Test`}>
