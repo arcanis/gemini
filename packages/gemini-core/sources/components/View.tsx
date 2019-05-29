@@ -1,3 +1,4 @@
+import {animated, useSpring}                                              from 'react-spring';
 import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from 'react';
 
 export type Props = {
@@ -26,7 +27,7 @@ export const View = ({children, index = 0}: Props) => {
     const activeView = activeViews.get(index);
 
     const style = typeof activeView !== `undefined`
-      ? {[`--gem-view`]: activeView.cssIndex}
+      ? {[`--gem-view-index`]: activeView.cssIndex}
       : {display: `none`};
 
     panels.push(<React.Fragment key={index}>
@@ -36,20 +37,25 @@ export const View = ({children, index = 0}: Props) => {
     </React.Fragment>);
   }
 
-  const [activeView, setActiveView] = useState();
+  const activeViewCss = activeViews.get(index)!.cssIndex;
+  const [activeView, setActiveView] = useState(activeViewCss);
 
   // By using useEffect (which executes only after the render), we ensure that
   // the browser will correctly trigger the animation for any view that just
   // appeared (instead of skipping their transition and putting them directly
   // at their final location)
   useLayoutEffect(() => {
-    setActiveView(activeViews.get(index)!.cssIndex);
+    setActiveView(activeViewCss);
+  });
+
+  const props = useSpring({
+    [`--gem-view-active`]: activeView,
   });
 
   return <>
-    <div className={`gem-view`} style={{[`--gem-timeout`]: timeout, [`--gem-active`]: activeView} as any}>
+    <animated.div className={`gem-view`} style={props as any}>
       {panels}
-    </div>
+    </animated.div>
   </>;
 };
 
