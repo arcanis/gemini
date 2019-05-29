@@ -161,6 +161,9 @@ function useActiveViews(index: number, {timeout}: {timeout: number}) {
 
       const zombieView = activeViews.current.get(zombieViewIndex)!;
 
+      if (zombieView.timeout !== null)
+        clearTimeout(zombieView.timeout);
+
       zombieView.timeout = setTimeout(() => {
         activeViews.current.delete(zombieViewIndex);
         forceUpdate();
