@@ -1,0 +1,20 @@
+{
+  "name": "@webdevice/core",
+  "private": true,
+  "main": "./sources",
+  "devDependencies": {
+    "@berry/pnpify": "^0.0.2",
+    "@types/react": "^16.8.18",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "@emotion/core": "*",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-spring": "*"
+  },
+  "dependencies": {
+    "@emotion/styled": "^10.0.11",
+    "react-swipeable": "^5.2.3"
+  }
+}

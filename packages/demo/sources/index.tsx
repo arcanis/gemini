@@ -1,6 +1,6 @@
 import '@gemini/core/sources/styles/index.less';
 
-import * as gem              from '@gemini/core';
+import * as gem              from '@webdevice/core';
 import {render}              from 'react-dom';
 import {Helmet}              from 'react-helmet';
 import {MdMenu, MdMoreHoriz} from 'react-icons/md';

@@ -4,8 +4,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
-    "@gemini/core": "workspace:packages/gemini-core",
-    "@gemini/faker": "workspace:packages/gemini-faker",
+    "@webdevice/core": "workspace:packages/webdevice-core",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",

@@ -1,0 +1,35 @@
+.gem-tabs-bar {
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, .15);
+}
+
+.gem-tabs[position="bottom"] > .gem-tabs-bar {
+  box-shadow: 0px -2px 3px 0px rgba(0, 0, 0, .15);
+}
+
+.gem-tab-label {
+  overflow: hidden;
+
+  padding: 0 10px;
+
+  text-align: center;
+  text-overflow: ellipsis;
+  line-height: 45px;
+  white-space: nowrap;
+}
+
+.gem-tabs-pointer {
+  height: 2px;
+
+  transition: transform .3s;
+}
+
+.gem-color-sets(~'.gt-tabs', {
+  > .gem-tabs-bar {
+    background: linear-gradient(to bottom, @color, darken(@color, 2%));
+    color: contrast(@color, @gem-white, @gem-black);
+  }
+
+  > .gem-tabs-bar > .gem-tabs-pointer {
+    background: contrast(@color, @gem-white, @gem-black);
+  }
+});
