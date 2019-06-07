@@ -78,7 +78,7 @@ const Pokedex = React.lazy(async () => {
     LEFT JOIN pokemon_species_names ON id=pokemon_species_id
     LEFT JOIN pokemon_types ON id=pokemon_id
     WHERE local_language_id=9
-    GROUP BY pokemon_id
+    GROUP BY id
     ORDER BY CAST(id AS INTEGER)
   `);
 
@@ -127,7 +127,7 @@ const Pokedex = React.lazy(async () => {
 });
 
 const Fallback = () => <>
-  <gem.CardPlaceholder>
+  <gem.CardPlaceholder style={{margin: `5px 0`}}>
     <div style={{height: `1em`}}/>
     <div style={{height: `1em`}}/>
   </gem.CardPlaceholder>
@@ -135,9 +135,11 @@ const Fallback = () => <>
 
 const Foo = () => <>
   <gem.CardContainer>
-    <React.Suspense fallback={<Fallback/>}>
-      <Pokedex/>
-    </React.Suspense>
+    <div style={{padding: `5px 0`}}>
+      <React.Suspense fallback={<Fallback/>}>
+        <Pokedex/>
+      </React.Suspense>
+    </div>
   </gem.CardContainer>
 </>;
 
