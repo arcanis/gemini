@@ -83,14 +83,11 @@ const Pokedex = React.lazy(async () => {
   `);
 
   const Row = ({index, style}: any) => {
-    if (index % 2 === 0)
-      return <div style={style}/>;
-
     const [id, name, types] = res.values[index];
 
     return <>
-      <div style={style}>
-        <gem.Card style={{height: `100%`, margin: `0 10px`}}>
+      <div style={{... style, padding: `5px 10px`}}>
+        <gem.Card style={{height: `100%`}}>
           <div style={{display: `flex`, alignItems: `center`, height: `100%`}}>
             <div style={{display: `inline-block`, marginRight: `1em`, borderRadius: 40, flex: `none`, padding: `5px 0`, background: getColor(types)}}>
               <i className={`pkspr-dex-${id.toString().padStart(4, 0)}-trimmed`} style={{verticalAlign: `middle`}}/>
@@ -105,14 +102,10 @@ const Pokedex = React.lazy(async () => {
     </>;
   };
 
-  const itemCount = res.values.length * 2 + 1;
+  const itemCount = res.values.length;
 
   const getItemSize = (index: number) => {
-      if (index % 2 === 0) {
-        return 10;
-      } else {
-        return 75;
-      }
+    return 75;
   };
 
   return {
@@ -127,19 +120,19 @@ const Pokedex = React.lazy(async () => {
 });
 
 const Fallback = () => <>
-  <gem.CardPlaceholder style={{margin: `5px 0`}}>
-    <div style={{height: `1em`}}/>
-    <div style={{height: `1em`}}/>
-  </gem.CardPlaceholder>
+  <div style={{padding: `5px 10px`}}>
+    <gem.CardPlaceholder>
+      <div style={{height: `1em`}}/>
+      <div style={{height: `1em`}}/>
+    </gem.CardPlaceholder>
+  </div>
 </>;
 
 const Foo = () => <>
-  <gem.CardContainer>
-    <div style={{padding: `5px 0`}}>
-      <React.Suspense fallback={<Fallback/>}>
-        <Pokedex/>
-      </React.Suspense>
-    </div>
+  <gem.CardContainer style={{padding: `5px 0`}}>
+    <React.Suspense fallback={<Fallback/>}>
+      <Pokedex/>
+    </React.Suspense>
   </gem.CardContainer>
 </>;
 
