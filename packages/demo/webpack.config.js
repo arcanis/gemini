@@ -9,7 +9,7 @@ const webpack = require(`webpack`);
 
 module.exports = (env, argv) => {
   const PUBLIC_PATH = true || argv.mode === `production`
-    ? `/gemini/`
+    ? `/webdevice/`
     : `/`;
 
   return {
