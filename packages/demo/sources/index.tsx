@@ -1,10 +1,15 @@
-import '@gemini/core/sources/styles/index.less';
+import '@webdevice/core/sources/styles/index.less';
+import 'pikasprite/build/spritesheet.css';
 
-import * as gem              from '@webdevice/core';
-import {render}              from 'react-dom';
-import {Helmet}              from 'react-helmet';
-import {MdMenu, MdMoreHoriz} from 'react-icons/md';
-import React                 from 'react';
+import * as gem                   from '@webdevice/core';
+import {render}                   from 'react-dom';
+import {Helmet}                   from 'react-helmet';
+import {MdMenu, MdMoreHoriz}      from 'react-icons/md';
+import AutoSizer                  from 'react-virtualized-auto-sizer';
+import {VariableSizeList as List} from 'react-window';
+import React                      from 'react';
+
+import {query}                    from './database';
 
 // Defined as a constant via the Webpack configuration
 
@@ -31,8 +36,109 @@ const Document = ({seed}: {seed: string}) => <>
   </div>
 </>;
 
+const TYPES_COLOR = new Map([
+  [ `1`, `#A8A878`], // Normal
+  [ `2`, `#C03028`], // Fighting
+  [ `3`, `#A890F0`], // Flying
+  [ `4`, `#A040A0`], // Poison
+  [ `5`, `#E0C068`], // Ground
+  [ `6`, `#B8A038`], // Rock
+  [ `7`, `#A8B820`], // Bug
+  [ `8`, `#705898`], // Ghost
+  [ `9`, `#B8B8D0`], // Steel
+  [`10`, `#F08030`], // Fire
+  [`11`, `#6890F0`], // Water
+  [`12`, `#78C850`], // Plant
+  [`13`, `#F8D030`], // Electric
+  [`14`, `#F85888`], // Psychic
+  [`15`, `#98D8D8`], // Ice
+  [`16`, `#7038F8`], // Dragon
+  [`17`, `#705848`], // Dark
+  [`18`, `#EE99AC`], // Fairy
+]);
+
+export const getColor = (typeString: string) => {
+  const types = typeString.split(/,/);
+
+  switch (types.length) {
+    case 2: {
+      return `linear-gradient(to bottom right, ${TYPES_COLOR.get(types[0])} 0%, ${TYPES_COLOR.get(types[0])} 49.99%, ${TYPES_COLOR.get(types[1])} 50%, ${TYPES_COLOR.get(types[1])} 100%)`;
+    } break;
+
+    case 1: {
+      return `${TYPES_COLOR.get(types[0])}`;
+    } break;
+  }
+};
+
+const Pokedex = React.lazy(async () => {
+  const res = await query(`
+    SELECT id, name, GROUP_CONCAT(type_id)
+    FROM pokemon_species
+    LEFT JOIN pokemon_species_names ON id=pokemon_species_id
+    LEFT JOIN pokemon_types ON id=pokemon_id
+    WHERE local_language_id=9
+    GROUP BY pokemon_id
+    ORDER BY CAST(id AS INTEGER)
+  `);
+
+  const Row = ({index, style}: any) => {
+    if (index % 2 === 0)
+      return <div style={style}/>;
+
+    const [id, name, types] = res.values[index];
+
+    return <>
+      <div style={style}>
+        <gem.Card style={{height: `100%`, margin: `0 10px`}}>
+          <div style={{display: `flex`, alignItems: `center`, height: `100%`}}>
+            <div style={{display: `inline-block`, marginRight: `1em`, borderRadius: 40, flex: `none`, padding: `5px 0`, background: getColor(types)}}>
+              <i className={`pkspr-dex-${id.toString().padStart(4, 0)}-trimmed`} style={{verticalAlign: `middle`}}/>
+            </div>
+            <div>
+              <h1>{name}</h1>
+              <p>#{String(id).padStart(3, `0`)}</p>
+            </div>
+          </div>
+        </gem.Card>
+      </div>
+    </>;
+  };
+
+  const itemCount = res.values.length * 2 + 1;
+
+  const getItemSize = (index: number) => {
+      if (index % 2 === 0) {
+        return 10;
+      } else {
+        return 75;
+      }
+  };
+
+  return {
+    default: () => <>
+      <AutoSizer>{({width, height}: any) => <>
+        <List width={width} height={height} itemCount={itemCount} itemSize={getItemSize}>
+          {Row}
+        </List>
+      </>}</AutoSizer>
+    </>,
+  };
+});
+
+const Fallback = () => <>
+  <gem.CardPlaceholder>
+    <div style={{height: `1em`}}/>
+    <div style={{height: `1em`}}/>
+  </gem.CardPlaceholder>
+</>;
+
 const Foo = () => <>
-  <Document seed={`foo`} />
+  <gem.CardContainer>
+    <React.Suspense fallback={<Fallback/>}>
+      <Pokedex/>
+    </React.Suspense>
+  </gem.CardContainer>
 </>;
 
 const Bar = () => <>

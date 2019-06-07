@@ -1,6 +1,8 @@
 const ForkTsCheckerWebpackPlugin = require(`fork-ts-checker-webpack-plugin`);
 const HtmlWebpackPlugin = require(`html-webpack-plugin`);
+const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
+
 
 const posix = require(`path`);
 const webpack = require(`webpack`);
@@ -16,6 +18,10 @@ module.exports = (env, argv) => {
 
     mode: `development`,
 
+    node: {
+      fs: `empty`,
+    },
+
     output: {
       path: posix.resolve(__dirname, `../../docs`),
       publicPath: PUBLIC_PATH,
@@ -23,6 +29,13 @@ module.exports = (env, argv) => {
 
     module: {
       rules: [{
+        test: /\.wasm$/,
+        type: `javascript/auto`,
+        loader: `file-loader`,
+      }, {
+        test: /\.db$/,
+        loader: `file-loader`,
+      }, {
         test: /\.tsx?$/,
         loader: `ts-loader`,
         options: PnpWebpackPlugin.tsLoaderOptions({
@@ -37,11 +50,23 @@ module.exports = (env, argv) => {
         }, {
           loader: `less-loader`,
         }],
+      }, {
+        test: /\.css$/,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+        }, {
+          loader: `css-loader`,
+        }],
+      }, {
+        test: /\.png$/,
+        use: [{
+          loader: `file-loader`,
+        }],
       }],
     },
 
     resolve: {
-      extensions: [`.ts`, `.tsx`, `.js`],
+      extensions: [`.ts`, `.tsx`, `.js`, `.json`],
       plugins: [
         PnpWebpackPlugin,
       ],
@@ -61,6 +86,10 @@ module.exports = (env, argv) => {
         filename: `404.html`,
         template: `./sources/404.html`,
         publicPath: PUBLIC_PATH,
+      }),
+      new MiniCssExtractPlugin({
+        filename: `[name].css`,
+        chunkFilename: `[id].css`,
       }),
     ],
 
