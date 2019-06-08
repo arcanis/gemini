@@ -7,7 +7,7 @@ import {Helmet}                   from 'react-helmet';
 import {MdMenu, MdMoreHoriz}      from 'react-icons/md';
 import AutoSizer                  from 'react-virtualized-auto-sizer';
 import {VariableSizeList as List} from 'react-window';
-import React                      from 'react';
+import React, {useMemo}           from 'react';
 
 import {query}                    from './database';
 
@@ -136,21 +136,53 @@ const Foo = () => <>
   </gem.CardContainer>
 </>;
 
-const Bar = () => <>
-  <Document seed={`bar`} />
-</>;
+const Bar = () => {
+  const actions = useMemo(() => ({
+    hello: <gem.Actionable children={`Hello from Bar`}/>
+  }), []);
 
-const Huey = () => <>
-  <Document seed={`huey`} />
-</>;
+  return <>
+    <gem.Menu name={`Actions`} actions={actions}>
+      <Document seed={`bar`} />
+    </gem.Menu>
+  </>;
+};
 
-const Dewey = () => <>
-  <Document seed={`dewey`} />
-</>;
+const Huey = () => {
+  const actions = useMemo(() => ({
+    hello: <gem.Actionable children={`Hello from Huey`}/>
+  }), []);
 
-const Louie = () => <>
-  <Document seed={`louie`} />
-</>;
+  return <>
+    <gem.Menu name={`Actions`} actions={actions}>
+      <Document seed={`huey`} />
+    </gem.Menu>
+  </>;
+};
+
+const Dewey = () => {
+  const actions = useMemo(() => ({
+    hello: <gem.Actionable children={`Hello from Dewey`}/>
+  }), []);
+
+  return <>
+    <gem.Menu name={`Actions`} actions={actions}>
+      <Document seed={`dewey`} />
+    </gem.Menu>
+  </>;
+};
+
+const Louie = () => {
+  const actions = useMemo(() => ({
+    hello: <gem.Actionable children={`Hello from Louie`}/>
+  }), []);
+
+  return <>
+    <gem.Menu name={`Actions`} actions={actions}>
+      <Document seed={`louie`} />
+    </gem.Menu>
+  </>;
+};
 
 const Baz = () => {
   return <>
@@ -163,6 +195,11 @@ const Baz = () => {
 };
 
 const Application = () => {
+  const actions = useMemo(() => ({
+    reload: <gem.Actionable onAction={`reload`} children={`Reload the app`}/>,
+    exit: <gem.Actionable onAction={`exit`} children={`Exit the app`}/>,
+  }), []);
+
   return <>
     <Helmet>
       <meta name={`viewport`} content={`width=device-width, user-scalable=no`} />
@@ -170,23 +207,25 @@ const Application = () => {
       <meta name={`apple-mobile-web-app-capable`} content={`yes`} />
     </Helmet>
     <gem.Page theme={`android`} baseUrl={PUBLIC_PATH}>
-      <gem.Header colorSet={`primary`} title={`Test`}>
-        <gem.Tools side={`primary`}>
-          <gem.Tool>
-            <MdMenu />
-          </gem.Tool>
-        </gem.Tools>
-        <gem.Tools side={`secondary`}>
-          <gem.Tool>
-            <MdMoreHoriz />
-          </gem.Tool>
-        </gem.Tools>
-      </gem.Header>
-      <gem.Tabs colorSet={`light`} position={`top`} landingTab={`foo`}>
-        <gem.Tab name={`foo`} title={`Foo`} component={Foo} />
-        <gem.Tab name={`bar`} title={`Bar`} component={Bar} />
-        <gem.Tab name={`baz`} title={`Baz`} component={Baz} />
-      </gem.Tabs>
+      <gem.Menu name={`Actions`} actions={actions}>
+        <gem.Header colorSet={`primary`} title={`Test`}>
+          <gem.Tools side={`primary`}>
+            <gem.Actionable onAction={`menu`}>
+              <MdMenu />
+            </gem.Actionable>
+          </gem.Tools>
+          <gem.Tools side={`secondary`}>
+            <gem.Actionable>
+              <MdMoreHoriz />
+            </gem.Actionable>
+          </gem.Tools>
+        </gem.Header>
+        <gem.Tabs colorSet={`light`} position={`top`} landingTab={`foo`}>
+          <gem.Tab name={`foo`} title={`Foo`} component={Foo}/>
+          <gem.Tab name={`bar`} title={`Bar`} component={Bar}/>
+          <gem.Tab name={`baz`} title={`Baz`} component={Baz}/>
+        </gem.Tabs>
+      </gem.Menu>
     </gem.Page>
   </>;
 };

@@ -1,6 +1,8 @@
 import {animated, useSpring}                                              from 'react-spring';
 import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from 'react';
 
+import {Cloak}                                                            from './Cloak';
+
 export type Props = {
   children: React.ReactNode;
   className?: string;
@@ -23,17 +25,19 @@ export const View = ({children, index = 0}: Props) => {
 
   const panels = [];
 
-  for (const [index, children] of viewStore) {
-    const activeView = activeViews.get(index);
+  for (const [viewIndex, children] of viewStore) {
+    const activeView = activeViews.get(viewIndex);
 
     const style = typeof activeView !== `undefined`
       ? {[`--gem-view-index`]: activeView.cssIndex}
       : {display: `none`};
 
-    panels.push(<React.Fragment key={index}>
-      <div className={`gem-view-panel`} style={style as any}>
-        {children}
-      </div>
+    panels.push(<React.Fragment key={viewIndex}>
+      <Cloak status={viewIndex !== index}>
+        <div className={`gem-view-panel`} style={style as any}>
+          {children}
+        </div>
+      </Cloak>
     </React.Fragment>);
   }
 

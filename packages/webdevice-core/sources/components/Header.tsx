@@ -5,7 +5,7 @@ import {ColorSet}    from '../props';
 import {getColorSet} from '../props';
 
 export type Props = {
-  children: Array<React.ReactElement<any, typeof Tools>>;
+  children?: Array<React.ReactElement<any, typeof Tools>>;
   colorSet?: ColorSet;
   title: string;
 };

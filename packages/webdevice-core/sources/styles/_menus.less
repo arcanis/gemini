@@ -1,0 +1,32 @@
+.gem-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: @gem-layer-menus;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.gem-menu-target {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.gem-menu-panel {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+}
+
+.gem-menu[data-gem-status="1"] {
+  pointer-events: auto;
+}

@@ -1,0 +1,26 @@
+.gem-menu {
+  transition: background .3s;
+}
+
+.gem-menu[data-gem-status="1"] {
+  background: @gem-overlay-background;
+}
+
+.gem-menu-target {
+  width: 80%;
+
+  max-width: 400px;
+}
+
+.gem-menu-panel {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+  transition: transform .3s;
+  transform: translateX(-100%);
+
+  background: @gem-white;
+}
+
+.gem-menu[data-gem-status="1"] .gem-menu-panel {
+  transform: translateX(0);
+}

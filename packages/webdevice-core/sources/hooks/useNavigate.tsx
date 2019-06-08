@@ -4,8 +4,8 @@ import {BreadcrumbContext}       from '../context';
 import {NavigateContext}         from '../context';
 
 export const useNavigate = () => {
-  const breadcrumb = useContext(BreadcrumbContext);
-  const navigate = useContext(NavigateContext);
+  const breadcrumbCtx = useContext(BreadcrumbContext);
+  const navigateCtx = useContext(NavigateContext);
 
   return useCallback((name: string | Array<string>, {strict = false}: {strict?: boolean} = {}) => {
     if (!Array.isArray(name))
@@ -14,16 +14,16 @@ export const useNavigate = () => {
     if (!strict) {
       const [first, ...rest] = name as Array<string>;
 
-      if (first === breadcrumb.consumed[breadcrumb.consumed.length - 1]) {
-        if (rest.every((segment, index) => segment === breadcrumb.available[index])) {
+      if (first === breadcrumbCtx.consumed[breadcrumbCtx.consumed.length - 1]) {
+        if (rest.every((segment, index) => segment === breadcrumbCtx.available[index])) {
           return;
         }
       }
     }
       
-    navigate(breadcrumb.consumed.concat(name));
+    navigateCtx.goTo(breadcrumbCtx.consumed.concat(name));
   }, [
-    breadcrumb.consumed.join(`/`),
-    navigate,
+    breadcrumbCtx.consumed.join(`/`),
+    navigateCtx,
   ]);
 };

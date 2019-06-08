@@ -49,23 +49,25 @@ export function useRouter(routes: Array<string>, {defaultSegment}: {defaultSegme
         path = [path];
 
       if (path.length === 1 && path[0] === defaultSegment) {
-        navigateCtx([]);
+        navigateCtx.goTo([]);
       } else {
-        navigateCtx(path);
+        navigateCtx.goTo(path);
       }
     };
 
-    const nextNavigate = (path: Array<string> | string) => {
-      if (!Array.isArray(path))
-        path = [path];
+    const nextContext = {
+      goTo: (path: Array<string> | string) => {
+        if (!Array.isArray(path))
+          path = [path];
 
-      navigate([segment, ... path]);
+        navigate([segment, ... path]);
+      },
     };
 
     const applyRouter = (name: string, child: React.ReactNode) => {
       return <>
         <BreadcrumbContext.Provider value={history.current!}>
-          <NavigateContext.Provider value={nextNavigate}>
+          <NavigateContext.Provider value={nextContext}>
             {child}
           </NavigateContext.Provider>
         </BreadcrumbContext.Provider>

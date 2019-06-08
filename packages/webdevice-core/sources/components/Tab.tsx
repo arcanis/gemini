@@ -1,5 +1,7 @@
 import React, {useCallback} from 'react';
 
+import {Actionable}         from './Actionable';
+
 export type Props = {
   component: any;
   name: string;
@@ -13,10 +15,8 @@ export const Tab = ({name, title, onActivate}: Props) => {
   }, [name, onActivate]);
 
   return <>
-    <div className={`gem-tab`} onClick={callback}>
-      <div className={`gem-tab-label`}>
-        {title}
-      </div>
-    </div>
+    <Actionable onAction={callback}>
+      {title}
+    </Actionable>
   </>;
 };

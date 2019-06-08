@@ -1644,6 +1644,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "npm:16.8.18"
                 ],
                 [
+                  "classnames",
+                  "npm:2.2.6"
+                ],
+                [
                   "react",
                   "npm:16.8.6"
                 ],
@@ -1686,6 +1690,10 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react",
                   "npm:16.8.18"
+                ],
+                [
+                  "classnames",
+                  "npm:2.2.6"
                 ],
                 [
                   "react-swipeable",
@@ -3843,6 +3851,23 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "static-extend",
                   "npm:0.1.2"
+                ]
+              ]
+            }
+          ]
+        ]
+      ],
+      [
+        "classnames",
+        [
+          [
+            "npm:2.2.6",
+            {
+              "packageLocation": "./.yarn/cache/classnames-npm-2.2.6-2eb86cef8f15b13c74c43c6818d3ef48b4886fdf95f83efae931b4c522887bea.zip/node_modules/classnames/",
+              "packageDependencies": [
+                [
+                  "classnames",
+                  "npm:2.2.6"
                 ]
               ]
             }

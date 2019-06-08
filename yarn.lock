@@ -524,6 +524,7 @@ __metadata:
     "@berry/pnpify": "npm:^0.0.2"
     "@emotion/styled": "npm:^10.0.11"
     "@types/react": "npm:^16.8.18"
+    classnames: "npm:^2.2.6"
     react-swipeable: "npm:^5.2.3"
     typescript: "npm:^3.4.5"
   peerDependencies:
@@ -1349,6 +1350,13 @@ __metadata:
     isobject: "npm:^3.0.0"
     static-extend: "npm:^0.1.1"
   checksum: 89a9e5029a8de58b7a102043a15e2cb52939dfcdb334a965750b398775f4040115bfdeec42a5f17763564d2955074bcc96453f6365c6404b89dd6b0fd4f4df64
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.2.6":
+  version: 2.2.6
+  resolution: "classnames@npm:2.2.6"
+  checksum: 2b3fc3e0a74480588f984a88c5c3ec24f63568955e9c73adf5090607067c54dac4254c9884a37f9c7800fea8fa9708036bb05c2db864f4471975af4be852f124
   languageName: node
   linkType: hard
 
