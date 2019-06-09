@@ -19,6 +19,8 @@
   },
   "devDependencies": {
     "@berry/pnpify": "^0.0.4",
+    "@types/emscripten": "^0.0.32",
+    "@types/node": "^12.0.7",
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
     "@types/react-helmet": "^5.0.8",

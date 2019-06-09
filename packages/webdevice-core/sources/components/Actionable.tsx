@@ -3,7 +3,7 @@ import React               from 'react';
 import {Action, useAction} from '../hooks/useAction';
 
 export type Props = {
-  children: React.ReactElement<any, any>;
+  children: React.ReactNode;
   onAction?: Action;
 };
 

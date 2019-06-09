@@ -1,9 +1,11 @@
-import React  from 'react';
+import React             from 'react';
 
-import {Tool} from './Tool';
+import {MaybeReactArray} from '../props';
+
+import {Actionable}      from './Actionable';
 
 export type Props = {
-  children: React.ReactElement<any, typeof Tool>;
+  children: MaybeReactArray<typeof Actionable>;
   side: `primary` | `secondary`;
 };
 

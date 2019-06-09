@@ -4,7 +4,7 @@ import {emptyFn}             from '../';
 
 import {useMenu}             from './useMenu';
 
-export type Action = (() => void) | `menu`;
+export type Action = (() => void) | `menu` | `exit` | `reload`;
 
 const reload = () => window.location.reload();
 const stop = () => window.stop();

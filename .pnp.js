@@ -136,6 +136,18 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "npm:4.3.0"
                 ],
                 [
+                  "@types/react-virtualized-auto-sizer",
+                  "npm:1.0.0"
+                ],
+                [
+                  "@types/react-window",
+                  "npm:1.8.0"
+                ],
+                [
+                  "@types/sql.js",
+                  "npm:1.0.1"
+                ],
+                [
                   "typescript",
                   "npm:3.4.5"
                 ]
@@ -955,6 +967,18 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/node",
                   "npm:12.0.2"
+                ]
+              ]
+            }
+          ],
+          [
+            "npm:12.0.7",
+            {
+              "packageLocation": "./.yarn/cache/@types-node-npm-12.0.7-c44f6125f2b15283d07afa959838c75029c4bc56b635dd5c23328f1307e91015.zip/node_modules/@types/node/",
+              "packageDependencies": [
+                [
+                  "@types/node",
+                  "npm:12.0.7"
                 ]
               ]
             }
@@ -5312,6 +5336,14 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                   "virtual:ea857599141643ab6c7c9d3e12a3fa7467f6b21f41c04f9859d2a0a933b435826e7571d13ea01aca8bdd75f0e7b427b4d7fe2ffad463bdb83e582cc00163b142#npm:10.0.11"
                 ],
                 [
+                  "@types/emscripten",
+                  "npm:0.0.32"
+                ],
+                [
+                  "@types/node",
+                  "npm:12.0.7"
+                ],
+                [
                   "@types/react",
                   "npm:16.8.18"
                 ],
@@ -7564,6 +7596,18 @@ function $$SETUP_STATE(hydrateRuntimeState) {
                 [
                   "@types/react-swipeable",
                   "npm:4.3.0"
+                ],
+                [
+                  "@types/react-virtualized-auto-sizer",
+                  "npm:1.0.0"
+                ],
+                [
+                  "@types/react-window",
+                  "npm:1.8.0"
+                ],
+                [
+                  "@types/sql.js",
+                  "npm:1.0.1"
                 ],
                 [
                   "typescript",

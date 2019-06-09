@@ -224,7 +224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/emscripten@npm:*":
+"@types/emscripten@npm:*, @types/emscripten@npm:^0.0.32":
   version: 0.0.32
   resolution: "@types/emscripten@npm:0.0.32"
   checksum: 536cb4f039efbfa7eafc5910322afea5f6a450449d8c07dbf3b1dba0dbf7a5cffd1e609538ff804f81ef1abbcaf96fd7daeb430bab491a3e96d09e992c0026a2
@@ -260,6 +260,13 @@ __metadata:
   version: 12.0.2
   resolution: "@types/node@npm:12.0.2"
   checksum: 91eddd3bebbdfbebda4f434314d5f7e176140d2415735696388660ea2db02f839c81ac7d5190c57389315be9e699bab3f9bdf3d08541215d05e79930205f15ab
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^12.0.7":
+  version: 12.0.7
+  resolution: "@types/node@npm:12.0.7"
+  checksum: cc19c82f341baead58330716f3f5a050d4cf48a08d1f0b30b2088dd8796bdfe256b3371fe6b78bdbba778d5d67742c02c03d308c71725759e3669a8cdf6607a8
   languageName: node
   linkType: hard
 
@@ -1909,6 +1916,8 @@ __metadata:
     "@berry/pnpify": "npm:^0.0.4"
     "@emotion/core": "npm:^10.0.10"
     "@emotion/styled": "npm:^10.0.11"
+    "@types/emscripten": "npm:^0.0.32"
+    "@types/node": "npm:^12.0.7"
     "@types/react": "npm:^16.8.18"
     "@types/react-dom": "npm:^16.8.4"
     "@types/react-helmet": "npm:^5.0.8"
@@ -2744,6 +2753,9 @@ __metadata:
     "@types/react-dom": "npm:^16.8.4"
     "@types/react-helmet": "npm:^5.0.8"
     "@types/react-swipeable": "npm:^4.3.0"
+    "@types/react-virtualized-auto-sizer": "npm:^1.0.0"
+    "@types/react-window": "npm:^1.8.0"
+    "@types/sql.js": "npm:^1.0.1"
     typescript: "npm:^3.4.5"
   dependenciesMeta:
     webpack-cli:

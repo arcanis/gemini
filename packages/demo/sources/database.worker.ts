@@ -1,4 +1,5 @@
 import initSql               from 'sql.js';
+// @ts-ignore
 import sqlWasmPath           from 'sql.js/dist/sql-wasm.wasm';
 
 // @ts-ignore
@@ -19,11 +20,15 @@ let running = false;
 const run = async (query: string) => {
   const db = await dbPromise;
 
+  let message;
   try {
-    postMessage([null, db.exec(query)[0]]);
+    message = [null, db.exec(query)[0]];
   } catch (error) {
-    postMessage([error]);
+    message = [error];
   }
+
+  // @ts-ignore
+  postMessage(message);
 };
 
 const tryRun = async () => {
