@@ -83,10 +83,13 @@ const Pokedex = React.lazy(async () => {
   `);
 
   const Row = ({index, style}: any) => {
-    const [id, name, types] = res.values[index];
+    if (index % 2 === 0)
+      return <div style={style}/>;
+
+    const [id, name, types] = res.values[(index - 1) / 2];
 
     return <>
-      <div style={{... style, padding: `5px 10px`}}>
+      <div style={{... style, padding: `0 10px`}}>
         <gem.Card style={{height: `100%`}}>
           <div style={{display: `flex`, alignItems: `center`, height: `100%`}}>
             <div style={{display: `inline-block`, marginRight: `1em`, borderRadius: 40, flex: `none`, padding: `5px 0`, background: getColor(types)}}>
@@ -102,10 +105,14 @@ const Pokedex = React.lazy(async () => {
     </>;
   };
 
-  const itemCount = res.values.length;
+  const itemCount = res.values.length * 2 + 1;
 
   const getItemSize = (index: number) => {
-    return 75;
+    if (index % 2 === 0) {
+      return 10;
+    } else {
+      return 65;
+    }
   };
 
   return {
@@ -129,7 +136,7 @@ const Fallback = () => <>
 </>;
 
 const Foo = () => <>
-  <gem.CardContainer style={{padding: `5px 0`}}>
+  <gem.CardContainer>
     <React.Suspense fallback={<Fallback/>}>
       <Pokedex/>
     </React.Suspense>
